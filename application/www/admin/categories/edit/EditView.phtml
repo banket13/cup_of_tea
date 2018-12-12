@@ -1,0 +1,21 @@
+<form action="<?=$requestUrl?>/admin/categories/edit" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>editer la catégorie:</legend>
+        <input type="hidden" name="id" value="<?= $category['cat_id']; ?>">
+        <label for="name">nom</label><br>
+        <input type="text" name="name" id="name" placeholder="ex: Thé noir" value="<?=$category['cat_name']?>"><br>
+
+        <label for="description">description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10" ><?=$category['cat_description']?></textarea><br>
+
+
+       
+
+        <label for="image"></label>
+        <input type="file" name="image" id="image">
+        <input type="hidden" name="originalImage" value="<?= $category['cat_image']; ?>">
+
+        <label for="send"></label>
+        <input type="submit" value="envoyer" id="send" accept="image/png,image/jpeg,image/gif">
+    </fieldset>    
+</form>

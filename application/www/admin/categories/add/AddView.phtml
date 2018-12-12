@@ -1,0 +1,18 @@
+<h1>Ajout de catégorie</h1>
+
+<form action="<?=$requestUrl?>/admin/categories/add" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Nouvelle catégorie:</legend>
+        <label for="name">nom</label><br>
+        <input type="text" name="name" id="name" placeholder="ex: Thé noir"><br>
+
+        <label for="description">description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Description de la catégorie du thé"></textarea><br>
+
+        <label for="image"></label>
+        <input type="file" name="image" id="image">
+
+        <label for="send"></label>
+        <input type="submit" value="envoyer" id="send" accept="image/png,image/jpeg,image/gif">
+    </fieldset>    
+</form>

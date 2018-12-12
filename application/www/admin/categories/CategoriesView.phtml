@@ -1,0 +1,30 @@
+
+<h1>Liste des catégories</h1>
+<?php foreach($flashbag as $flash):?>
+    <p><?=$flash?></p>
+<?php endforeach;?>   
+<table border=2 id="tableDonnee">    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>description</th>
+            <th>image</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($categories as $categorie): ?>
+        <tr>
+            <td><?=$categorie['cat_id'];?></td>
+            <td><?=$categorie['cat_name'];?></td>
+            <td><?=$categorie['cat_description'];?></td>
+            <td><img  src="<?= $wwwUrl ?>/img/tea/<?=$categorie['cat_image'];?>"></td>
+            <td>
+                <a href="<?= $requestUrl; ?>/admin/categories/edit?id=<?= $categorie['cat_id']; ?>">Modifier</a>
+                <a href="<?= $requestUrl; ?>/admin/categories/delcategorie?id=<?= $categorie['cat_id']; ?>" data-toggle="modal" data-target="#delete">Supprimer</a>
+            </td>
+        </tr>
+    <?php endforeach;?>
+    </tbody>
+</table>
